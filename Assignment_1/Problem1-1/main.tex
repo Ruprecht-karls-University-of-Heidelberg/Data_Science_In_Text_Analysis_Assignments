@@ -1,0 +1,194 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% PACKAGES:
+\begin{document}
+% TITLE:
+\pagenumbering{roman} 
+\begin{titlepage}
+
+\title{Data Science Assignment 1}
+\author[1]{Kushal Gaywala}
+\author[2]{Jakob F}
+\author[3]{Jonathan H}
+\author[4]{Rishabh Tiwari}
+\date{November 2022}
+
+\begin{center}
+\textbf{ 
+\LARGE Heidelberg University\\
+\smallskip
+\Large Institute of Computer Science\\
+%\smallskip
+%\Large Database Systems Research Group\\
+\smallskip
+}
+
+\vspace{3cm}
+
+\textbf{\Large Data Science for Text Analytics}
+
+\vspace{1\baselineskip}
+{\huge
+\textbf{Assignment 1}
+}
+\end{center}
+
+\vspace{3cm}
+
+{\large
+\begin{tabular}[l]{ll}
+Team Member: &Kushal Gaywala, 3769104\\ & Master in Data and Computer Science \\ &
+   kushal.gaywala@stud.uni-heidelberg.de\\
+Team Member: &Jakob Forstmann, 4123439\\ &Bachelor Computer Science\\ &
+    jakob.forstmann@stud.uni-heidelberg.de\\
+% If the line goes too far to the right, you can alter this slightly, e.g.
+Team Member: & Jonathan Alexander Hirsch, 3604305\\
+  & Bachelor Physics \\ & ww251@stud.uni-heidelberg.de\\
+Team Member: &Rishabh Tiwari, 3770152\\ & Master in Data and Computer Science \\ & rishabh.tiwari@stud.uni-heidelberg.de\\
+\end{tabular}
+}
+
+\end{titlepage}
+\large
+\section*{Problem 1-1}
+    % Within the last year, an insurance company has transitioned from physical printouts to digitized document scans for all customer-related forms. These documents should now be used for further analysis of customer needs. 
+    % Briefly describe each of the planning considerations for a text analytics project in the above scenario. As a reminder, the considerations include: 
+    % (i) drivers,
+    % (ii) objectives,
+    % (iii) data availability, and
+    % (iv) cost factors
+\text{ 
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Drivers:\\
+        There can be many factors taken into consideration before deciding and carry through this long process. Like:
+        \begin{itemize}
+            \item Time and Money,
+            \item Customer support,
+            \item Digitization,
+            \item Maintainability
+            \item Organizational Point of View and
+            \item Many more
+        \end{itemize}
+        The main reason for them to change there years old process can be \textbf{Digitization}. As many new companies start-off with the digital database to make the analytical operations viable and possible. 
+        
+        \item Objectives:\\
+        The organization decided upon the idea of digitization to further analysis of the Customer data. Hence, the main objective of the organization is the analysis of the Customer's data. Further monetize the data by selling it or selling the analytical data acquired deriving it.
+        
+        \item Data availability:\\
+        There are huge amounts of data in a company, considering it is more expanded and relatively older. If a certain type of data is needed to be retrieved by an employee, one needed to go to the physical forms database and manually search the data. If the data is in a extensively board measure, then it is a very tiring task even if the data needed is tiny. After this process the availability will be more flexible as most the Customer's data will be available on the Company's main server which is good for the employees and Company's time and resources.
+        
+        \item Cost factors:\\
+        All the drawbacks mentioned above may produce a huge impact on the cost of analysis as the Company's time will be wasted searching for the data in physical database. Rather, if the Company move towards the digitization they can save the time. Therefore, the money of the organization will be saved as time plays a large role when money is concerned.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item The Data can also be stored in the Elasticsearch but it is not made for it. It is made to search the data in an efficient way without the help of indexing.
+        \item The searching process is quick and flexible, it has options to search the data in many ways:
+        \begin{itemize}
+            \item Structured,
+            \item Unstructured,
+            \item Geo,
+            \item Metric and
+            \item More
+        \end{itemize}
+        \item PostgreSql is an relational database system(SQL), used to store relational data and used the Index to traverse the needed Data unlike Elasticsearch where we can store the NoSql Data and can search without the need of Index.
+        \item Postgresql is relatively faster because it uses Index as the main attribute.
+        \item We can store large quantities of data in Sql database as it is made for it.
+        \item Elasticsearch is best used for the data that can be searched without the indexing. We can use it to search the data directly with the following:
+        \begin{itemize}
+            \item Keywords,
+            \item Json Fields and
+            \item Other attributes
+        \end{itemize}
+        \item But, when it comes to retrieval of the records Elasticsearch comes in clutch. As it can be used as a client to cache the data for the user and act as a medium to search data more conveniently with the help of keywords and JSON options that we can use with it.\\\\
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Stop word removal:
+        \begin{itemize}
+            \item Advantages:
+            \begin{enumerate}
+                \item Lengths also get relatively get shorter based on the Stop word in an sentence, but usually it gets pretty short.
+                \item The sentences become much more easier to implement Text Analytics on them.
+                \item Example: 
+                \begin{itemize}
+                    \item Consider a sentence "This video of yours did not disappointed Me".
+                    \item Now we remove \textbf{stop words} from it.
+                    \item We get "video disappointed"
+                    \item Now, we can easily see that the comment i.e. sentence, after removing the stop words got significantly smaller, from 7 words to 2 words of sentence.
+                    \item Therefore, it will be much easier and quicker in processing from these type of data.
+                \end{itemize}
+            \end{enumerate}
+            \item Disadvantages:
+            \begin{enumerate}
+                \item The list of stop words is not universal and a same list can not be used on every data-set. It needs to be derived from the type of data-set we have.
+                \item It cannot always maintain the true meaning of a sentence as it removes the significant stop words from it.
+                \item Example: 
+                \begin{itemize}
+                    \item Consider a sentence "This video of yours did not disappointed Me".
+                    \item Now we remove \textbf{stop words} from it.
+                    \item We get "video disappointed"
+                    \item The comment will be classified as 'negative' even it is 'positive' in nature.
+                    \item The removal of stop words removed some significant words which were important for the true meaning of the sentence.
+                    \item The List of Stop words used here contained some important words like [did, not] and they were removed.
+                \end{itemize}
+            \end{enumerate}
+        \end{itemize}
+        \item Stemming:
+        \begin{itemize}
+            \item Advantages:
+            \begin{enumerate}
+                \item This shortens the length of a sentence but with different way and it makes the process of understanding the sentence much faster.
+                \item It also helps in deletion of unnecessary formations of words in sentences.
+                \item Example:
+                \begin{itemize}
+                    \item We can consider the following comment:
+                    \item "This video is more informative than others".
+                    \item We get, "This video be much inform than others".
+                    \item In these sentence the stem version of the words have been generated and replaced with the original forms.
+                    \item As you can see the length got a little decreased but the processing will be really grateful about it because the interpretation of the meaning will be much easier.
+                \end{itemize}
+            \end{enumerate}
+            \item Disadvantages:
+            \begin{enumerate}
+                \item The disadvantage of shortening of a word is that sometimes the word's 'stem word' is different than what is interpreted my the algorithm.
+                \item This problem changes the meaning of a word or sometimes even generate an non-existent word.
+                \item Example:
+                \begin{itemize}
+                    \item "This video is more informative than others".
+                    \item "This video be more inform than others"
+                    \item "This video be mo inform than others"
+                    \item Here, the stemming of 'more' is not done as the algorithm might be thinking it is already stemmed or it can be stemmed in a different word 'mo' which does not possess any meaning.
+                    \item This also deteriorated the meaning of the whole Sentence.
+                \end{itemize}
+            \end{enumerate}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+}
+
+\section*{Problem 1-2 2.}
+We would not use regular expressions to parse a set of HTML Files for three reasons.
+First of all, it is impossible because HTML is a context free language but regular expressions 
+can only detect regular languages.The main problem is that you can not break down HTML into 
+meaningful tokens using regular expressions because for example regular expressions can not detect 
+deeply nested structures such as \verb+<div<p>text</p></div+. Nevertheless there are some regex l
+ibraries detecting nested structures such as nested parenthesis. But these libraries use more 
+sophisticated features namely recursion and submodules calls inside a regular expression which 
+are not supported by  all regEx  libraries. Moreover, we think that the resulting expressions
+,for example \verbü\( ( (?>[^()]+) | (?R) )* \)ü, are hard to read and understand. We think it 
+would be much easier to implement a pushdown automata. Lastly even with these features one can 
+not parse HTML files perfectly  since context free languages such as HTML are a proper subset
+of regular languages.
+
+\section*{Problem 1.3 2.}
+PDF files can provide information in a much more structured manner than raw strings, e.g in tables or with footnotes.
+Some strings in the PDF file might not have any sensible meaning in the extracted string, e.g. page numbers.
+There might be text in a PDF like image captions for which it is hard to decide where they should be inserted into the text.
+It is hard or impossible to decide automatically whether a linebreak in a PDF has a semantic meaning
+(i.e. it should be kept in the string)
+or wheter it is just needed due to the line length or the table cell siye (in this case, it might be sensible to remove it in the extracted text).
+\end{document}
